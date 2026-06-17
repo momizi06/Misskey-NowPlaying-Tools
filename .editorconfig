@@ -1,0 +1,60 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+# WebKit style base (adapted to EditorConfig / Roslyn)
+[*.{cs,csx}]
+indent_style = space
+indent_size = 4
+
+# Keep namespace/member indentation strict.
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = false
+csharp_indent_labels = one_less_than_current
+
+# One statement/block per line where possible.
+csharp_preserve_single_line_statements = false
+csharp_preserve_single_line_blocks = false
+
+# Braces: prefer no braces for single-line control clauses.
+csharp_prefer_braces = false:suggestion
+
+# Spacing rules.
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_around_binary_operators = before_and_after
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_method_declaration_name_and_opening_parenthesis = false
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_after_comma = true
+csharp_space_before_comma = false
+csharp_space_after_dot = false
+csharp_space_before_dot = false
+
+# Line wrapping: operators at beginning of wrapped lines.
+csharp_style_operator_placement_when_wrapping = beginning_of_line
+
+# var naming in WebKit spirit (m_ prefix for private fields).
+dotnet_naming_rule.private_fields_m_prefix.symbols = private_fields
+dotnet_naming_rule.private_fields_m_prefix.style = m_prefix_style
+dotnet_naming_rule.private_fields_m_prefix.severity = suggestion
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+dotnet_naming_symbols.private_fields.required_modifiers = 
+
+dotnet_naming_style.m_prefix_style.required_prefix = m_
+dotnet_naming_style.m_prefix_style.capitalization = camel_case
+
+# C/C++ files: keep core WebKit indentation defaults.
+[*.{c,cc,cpp,cxx,h,hh,hpp,hxx}]
+indent_style = space
+indent_size = 4
